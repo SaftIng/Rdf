@@ -24,6 +24,19 @@ class CommonNamespacesTest extends TestCase
     }
 
     /*
+     * Tests for __construct
+     */
+
+    public function testConstructAddingNewPrefixes()
+    {
+        $this->fixture = new CommonNamespaces([
+            'foo' => 'http://bar'
+        ]);
+
+        $this->assertEquals('http://bar', $this->fixture->getUri('foo'));
+    }
+
+    /*
      * Tests for extendUri
      */
 
@@ -126,7 +139,7 @@ class CommonNamespacesTest extends TestCase
 
         $this->assertEquals(
             [
-                'getPrefix_http://www.w3.org/2000/01/rdf-schema#label' => 'rdfs:label'
+                'getPrefix_http://www.w3.org/2000/01/rdf-schema#label' => 'rdfs:label',
             ],
             $this->fixture->getCache()
         );

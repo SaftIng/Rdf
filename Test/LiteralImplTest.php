@@ -21,7 +21,7 @@ class LiteralImplTest extends AbstractLiteralTest
     /**
      * Return a new instance of LiteralImpl.
      */
-    public function newInstance($value, Node $datatype = null, $lang = null)
+    public function getInstance($value, Node $datatype = null, $lang = null)
     {
         return new LiteralImpl($value, $datatype, $lang);
     }

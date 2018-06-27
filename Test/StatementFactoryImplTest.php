@@ -12,17 +12,21 @@
 
 namespace Saft\Rdf\Test;
 
-use Saft\Rdf\CommonNamespaces;
 use Saft\Rdf\NodeFactory;
 use Saft\Rdf\NodeFactoryImpl;
+use Saft\Rdf\Statement;
+use Saft\Rdf\StatementFactory;
+use Saft\Rdf\StatementFactoryImpl;
 
-class NodeFactoryImplTest extends AbstractNodeFactoryTest
+class StatementFactoryImplTest extends AbstractStatementFactoryTest
 {
-    /**
-     * An abstract method which returns new instances of NodeFactory.
-     */
-    public function getInstance(): NodeFactory
+    public function getInstance(): StatementFactory
     {
-        return new NodeFactoryImpl(new CommonNamespaces());
+        return new StatementFactoryImpl();
+    }
+
+    public function getNodeFactory(): NodeFactory
+    {
+        return new NodeFactoryImpl();
     }
 }
